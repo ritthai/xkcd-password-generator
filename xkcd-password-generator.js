@@ -1,3 +1,9 @@
+/*
+Copyright (c) 2013 Ritchie Thai
+
+See the file license.txt for copying permission.
+*/
+
 var makeXkcdPasswordGenerator = function () {
 
 //http://www.englishclub.com/vocabulary/common-words-5000.htm
