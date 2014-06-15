@@ -1,7 +1,9 @@
 xkcd-password-generator
 =======================
 
-A password generator based on http://xkcd.com/936/
+By Ritchie Thai
+
+An MIT licensed password generator based on http://xkcd.com/936/
 
 Words are from http://www.englishclub.com/vocabulary/common-words-5000.htm
 
