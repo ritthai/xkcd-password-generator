@@ -16,21 +16,69 @@ See the file license.txt for copying permission.
                 max-width: 600px;
                 margin: 0 auto;
             }
+
+            .big-button {
+                width: 100%;
+                height: 3em;
+            }
         </style>
     </head>
     <body>
         <div id="page">
             <h1>xkcd Password Generator</h1>
-            <button onclick="generatePassword();">Generate Password</button>
+
+            <h3>Generated Password</h3>
             <p id="password"></p>
+
+            <button class="big-button" onclick="generatePassword();">
+                Generate New Password
+            </button>
+
+
+            <h2>Description</h2>
+
+            <p>
+                An open source / free software MIT licensed password generator based on <a href="http://xkcd.com/936/">xkcd's Password Strength comic</a>.
+            </p>
+
+            <ul>
+                <li>open source so that the behaviour can be verified</li>
+                <li>client side to ensure a server cannot steal the password</li>
+                <li>a browser app so that run without installation</li>
+            </ul>
+
+            <p>
+                Words are from <a href="http://www.englishclub.com/vocabulary/common-words-5000.htm">http://www.englishclub.com/vocabulary/common-words-5000.htm</a>
+            </p>
+
+            <p>
+                Cryptographically secure random entropy is generated using <a href="https://developer.mozilla.org/en-US/docs/Web/API/window.crypto.getRandomValues">https://developer.mozilla.org/en-US/docs/Web/API/window.crypto.getRandomValues</a>,
+                bit shifted to reduce bits of entropy,
+                and repeating if the bit shifted number is still out of range.
+            </p>
+
+            <p>
+                <a href="http://preshing.com/20110811/xkcd-password-generator/">preshin's existing open source client side browser app implementation</a> also works, but it doesn't actually link to the code. The code on the website is mixed with code from the article. The implementation is also more complex and therefore harder to verify because it generates its own cryptographically secure random entropy, whereas this relies on the W3 standard imlementation.
+            </p>
+
+            <p>
+                <a href="https://github.com/ritthai/xkcd-password-generator">Source on GitHub</a>
+            </p>
+
+            <p>
+                By Ritchie Thai
+            </p>
         </div>
+
         <script src="xkcd-password-generator.js"></script>
         <script>
             var passwordGenerator = makeXkcdPasswordGenerator();
 
-            var generatePassword = function () {
+            var generatePassword = function() {
                 document.getElementById('password').innerHTML = passwordGenerator.generatePassword();
             };
+
+            generatePassword();
         </script>
     </body>
 </html>

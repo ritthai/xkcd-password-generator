@@ -30,6 +30,9 @@ var getCryptographicallySecureRandomNumber = function (max) {
 var generatePassword = function () {
     var password = '';
     for (var i = 0; i < passwordWordCount; i++) {
+        if (password) {
+          password += ' ';
+        }
         password += words[getCryptographicallySecureRandomNumber(words.length)];
     }
     return password;
